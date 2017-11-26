@@ -1,10 +1,11 @@
 'use strict';
 
-var WordCount = require("../app/wordCount.js")
-var fs = require('fs')
-var file = '../CTM_Test/spec/TextFiles/fortestingwithtdd.txt'
+var WordCount = require("../app/wordCount.js");
+var fs = require('fs');
+require('node-jasmine-file-contents-matcher');
+var file = '../CTM_Test/spec/TextFiles/fortestingwithtdd.txt';
 var filetext = "Hello this is a test\nOnce again, this is my writing for the purpose\nOf testing in TDD\n";
-
+var fileoutput = '../CTM_Test/spec/TextFiles/fileoutput.txt';
 describe('wordCount',function(){
 
   var wordCount;
@@ -40,8 +41,11 @@ describe("When changing the format of the text file", function() {
   it('will remove all empty entries', function() {
      expect(wordCount.removeEmptyEntries(file.split(/\s+/))).toEqual(file.split(/\s+/).filter(v => !!v))
    });
-   it('will count all the terms', function() {
-    expect(wordCount.countTerms(file.split(/\s+/).filter(v => !!v))).toEqual(file.split(/\s+/).filter(v => !!v).reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {}))
+  it('will count all the terms', function() {
+    expect(wordCount.countTerms(file.split(/\s+/).filter(v => !!v))).toEqualFileContents(fileoutput)
    });
+  it('will have the correct output', function() {
+    expect(wordCount.printOutput()).toEqualFileContents(fileoutput)
+    });
   });
  });

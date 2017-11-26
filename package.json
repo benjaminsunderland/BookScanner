@@ -18,5 +18,8 @@
   "homepage": "https://github.com/benjaminsunderland/CTM_Test#readme",
   "devDependencies": {
     "jasmine": "^2.8.0"
+  },
+  "dependencies": {
+    "node-jasmine-file-contents-matcher": "^0.1.5"
   }
 }

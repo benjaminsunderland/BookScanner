@@ -2,7 +2,6 @@ var fs = require('fs')
 
 function WordCount(filepath){
   this._filepath = filepath || null
-  this._words = {}
   this._data;
 }
 
@@ -35,4 +34,11 @@ WordCount.prototype.countTerms = function(words) {
   return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
 }
 
+WordCount.prototype.printOutput = function() {
+  return this.countTerms(this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfileSync())))))
+}
+
 module.exports = WordCount;
+
+const file1 = new WordCount('../CTM_Test/spec/TextFiles/fortestingwithtdd.txt');
+console.log(file1.printOutput())
