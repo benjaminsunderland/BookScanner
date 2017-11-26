@@ -16,7 +16,6 @@ if (!self._filepath) {
 }
 
 WordCount.prototype.toDowncase = function(words) {
-  return true
   return words.toLowerCase()
 }
 
