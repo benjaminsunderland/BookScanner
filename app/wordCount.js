@@ -5,7 +5,7 @@ function WordCount(filepath){
   this._data;
 }
 
-WordCount.prototype.readfileSync = function() {
+WordCount.prototype.readfile = function() {
 var self = this;
 if (!self._filepath) {
    throw new Error("File not found")
@@ -35,10 +35,7 @@ WordCount.prototype.countTerms = function(words) {
 }
 
 WordCount.prototype.printOutput = function() {
-  return this.countTerms(this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfileSync())))))
+  return this.countTerms((this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfile()))))))
 }
 
 module.exports = WordCount;
-
-const file1 = new WordCount('../CTM_Test/spec/TextFiles/fortestingwithtdd.txt');
-console.log(file1.printOutput())
