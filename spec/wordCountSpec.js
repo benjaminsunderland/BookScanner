@@ -31,5 +31,8 @@ describe("When changing the format of the text file", function() {
   it('will change all the words to lowercase', function() {
       expect(wordCount.toDowncase(file)).toEqual(true)
    });
+  it('will remove non-words', function() {
+       expect(wordCount.removeWords(file)).toEqual(true)
+    });
   });
  });

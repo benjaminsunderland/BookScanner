@@ -20,5 +20,9 @@ WordCount.prototype.toDowncase = function(data) {
   return true
 }
 
+WordCount.prototype.removeWords = function(data) {
+  data.replace(/\W/g, " ")
+  return true
+}
 
 module.exports = WordCount;
