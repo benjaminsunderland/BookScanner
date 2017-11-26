@@ -9,14 +9,27 @@ describe('wordCount',function(){
 
   var wordCount;
 
+  beforeEach(function(){
+
+  wordCount = new WordCount(file)
+
+  });
+
 describe("When trying to read a file", function() {
   it('will not throw an error when reading the file', function() {
-    wordCount = new WordCount(file)
     expect(wordCount.readfileSync()).toEqual(true)
   });
+});
+describe("When a file isn't available", function() {
   it('will throw an error if a file is missing', function() {
-     wordCount = new WordCount()
+      wordCount = new WordCount()
      expect(function() {wordCount.readfileSync()}).toThrow()
   });
- });
 });
+
+describe("When changing the format of the text file", function() {
+  it('will change all the words to lowercase', function() {
+      expect(wordCount.toDowncase(file)).toEqual(true)
+   });
+  });
+ });
