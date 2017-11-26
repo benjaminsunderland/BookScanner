@@ -3,7 +3,7 @@ var fs = require('fs')
 function WordCount(filepath){
   this._filepath = filepath || null
   this._words = {}
-  var data;
+  this._data;
 }
 
 WordCount.prototype.readfileSync = function() {
@@ -11,24 +11,37 @@ var self = this;
 if (!self._filepath) {
    throw new Error("File not found")
  }
-data = fs.readFileSync(self._filepath, 'utf8')
-return true
+ self._data = fs.readFileSync(self._filepath, 'utf8')
+ return self._data
 }
 
-WordCount.prototype.toDowncase = function(data) {
-  data.toLowerCase()
-  return true
+WordCount.prototype.toDowncase = function(words) {
+  //console.log('thissssssssss inside downcase', this._data);
+  return words.toLowerCase()
 }
 
-WordCount.prototype.removeWords = function(data) {
-  data.replace(/\W/g, " ")
-  return true
+WordCount.prototype.removeWords = function(words) {
+  return words.replace(/\W/g, " ")
 }
 
-WordCount.prototype.wordSplit = function(data) {
-  data.split(/\s+/)
-  return true
+WordCount.prototype.wordSplit = function(words) {
+  return words.split(/\s+/);
 }
 
+WordCount.prototype.removeEmptyEntries = function(words) {
+  return words.filter(v => !!v)
+}
+
+WordCount.prototype.countTerms = function(words) {
+  return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
+}
+
+WordCount.prototype.printOutput = function() {
+  return this.countTerms(this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfileSync())))))
+
+}
 
 module.exports = WordCount;
+
+const file1 = new WordCount('../CTM_Test/spec/TextFiles/therailwaychildren.txt');
+console.log(file1.printOutput())

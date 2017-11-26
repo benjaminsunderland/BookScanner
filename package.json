@@ -1,0 +1,22 @@
+{
+  "name": "ctm_test",
+  "version": "1.0.0",
+  "description": "- Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjaminsunderland/CTM_Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjaminsunderland/CTM_Test/issues"
+  },
+  "homepage": "https://github.com/benjaminsunderland/CTM_Test#readme",
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
