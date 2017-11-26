@@ -3,7 +3,7 @@
 var WordCount = require("../app/wordCount.js")
 var fs = require('fs')
 var file = '../CTM_Test/spec/TextFiles/fortestingwithtdd.txt'
-
+var filetext = "Hello this is a test\nOnce again, this is my writing for the purpose\nOf testing in TDD\n";
 
 describe('wordCount',function(){
 
@@ -17,7 +17,7 @@ describe('wordCount',function(){
 
 describe("When trying to read a file", function() {
   it('will not throw an error when reading the file', function() {
-    expect(wordCount.readfileSync()).toEqual(true)
+    expect(wordCount.readfileSync()).toEqual(filetext)
   });
 });
 describe("When a file isn't available", function() {

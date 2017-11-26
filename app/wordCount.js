@@ -16,32 +16,18 @@ if (!self._filepath) {
 }
 
 WordCount.prototype.toDowncase = function(words) {
-  //console.log('thissssssssss inside downcase', this._data);
+  return true
   return words.toLowerCase()
 }
 
 WordCount.prototype.removeWords = function(words) {
+  return true
   return words.replace(/\W/g, " ")
 }
 
 WordCount.prototype.wordSplit = function(words) {
+  return true
   return words.split(/\s+/);
 }
 
-WordCount.prototype.removeEmptyEntries = function(words) {
-  return words.filter(v => !!v)
-}
-
-WordCount.prototype.countTerms = function(words) {
-  return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
-}
-
-WordCount.prototype.printOutput = function() {
-  return this.countTerms(this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfileSync())))))
-
-}
-
 module.exports = WordCount;
-
-const file1 = new WordCount('../CTM_Test/spec/TextFiles/therailwaychildren.txt');
-console.log(file1.printOutput())
