@@ -27,4 +27,8 @@ WordCount.prototype.wordSplit = function(words) {
   return words.split(/\s+/);
 }
 
+WordCount.prototype.removeEmptyEntries = function(words) {
+  return words.filter(v => !!v)
+}
+
 module.exports = WordCount;
