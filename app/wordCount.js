@@ -24,7 +24,6 @@ WordCount.prototype.removeWords = function(words) {
 }
 
 WordCount.prototype.wordSplit = function(words) {
-  return true
   return words.split(/\s+/);
 }
 
