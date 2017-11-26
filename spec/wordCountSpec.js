@@ -29,16 +29,19 @@ describe("When a file isn't available", function() {
 
 describe("When changing the format of the text file", function() {
   it('will change all the words to lowercase', function() {
-    expect(wordCount.toDowncase(filetext)).toEqual(filetext.toLowerCase())
+     expect(wordCount.toDowncase(filetext)).toEqual(filetext.toLowerCase())
    });
   it('will remove non-words', function() {
-    expect(wordCount.removeWords(file)).toEqual(file.replace(/\W/g, " "))
+     expect(wordCount.removeWords(file)).toEqual(file.replace(/\W/g, " "))
    });
   it('will split by space, tab and newline', function() {
      expect(wordCount.wordSplit(file)).toEqual(file.split(/\s+/))
    });
-   it('will remove all empty entries', function() {
-   expect(wordCount.removeEmptyEntries(file.split(/\s+/))).toEqual(file.split(/\s+/).filter(v => !!v))
+  it('will remove all empty entries', function() {
+     expect(wordCount.removeEmptyEntries(file.split(/\s+/))).toEqual(file.split(/\s+/).filter(v => !!v))
+   });
+   it('will count all the terms', function() {
+    expect(wordCount.countTerms(file.split(/\s+/).filter(v => !!v))).toEqual(file.split(/\s+/).filter(v => !!v).reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {}))
    });
   });
  });

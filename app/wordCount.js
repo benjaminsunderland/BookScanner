@@ -31,4 +31,8 @@ WordCount.prototype.removeEmptyEntries = function(words) {
   return words.filter(v => !!v)
 }
 
+WordCount.prototype.countTerms = function(words) {
+  return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
+}
+
 module.exports = WordCount;
