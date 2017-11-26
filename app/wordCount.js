@@ -20,7 +20,6 @@ WordCount.prototype.toDowncase = function(words) {
 }
 
 WordCount.prototype.removeWords = function(words) {
-  return true
   return words.replace(/\W/g, " ")
 }
 
