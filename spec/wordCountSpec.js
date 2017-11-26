@@ -29,10 +29,13 @@ describe("When a file isn't available", function() {
 
 describe("When changing the format of the text file", function() {
   it('will change all the words to lowercase', function() {
-      expect(wordCount.toDowncase(file)).toEqual(true)
+    expect(wordCount.toDowncase(file)).toEqual(true)
    });
   it('will remove non-words', function() {
-       expect(wordCount.removeWords(file)).toEqual(true)
-    });
+    expect(wordCount.removeWords(file)).toEqual(true)
+   });
+   it('will split by space, tab and newline', function() {
+     expect(wordCount.wordSplit(file)).toEqual(true)
+   });
   });
  });

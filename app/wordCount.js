@@ -25,4 +25,10 @@ WordCount.prototype.removeWords = function(data) {
   return true
 }
 
+WordCount.prototype.wordSplit = function(data) {
+  data.split(/\s+/)
+  return true
+}
+
+
 module.exports = WordCount;
