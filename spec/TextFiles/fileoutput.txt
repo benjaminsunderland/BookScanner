@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 [ { hello: 1, prime: false },
   { this: 2, prime: true },
   { is: 2, prime: true },
+=======
+[ { '1': 14, prime: false },
+  { '2': 2, prime: true },
+  { hello: 1, prime: false },
+  { this: 1, prime: false },
+  { is: 1, prime: false },
+>>>>>>> e3ca7e417ac633d7ac480fc603adc131e2ae186c
   { a: 1, prime: false },
   { test: 1, prime: false },
   { once: 1, prime: false },
