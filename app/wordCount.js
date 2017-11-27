@@ -14,6 +14,10 @@ if (!self._filepath) {
  return self._data
 }
 
+WordCount.prototype.testFunction = function() {
+  return true
+}
+
 WordCount.prototype.toDowncase = function(words) {
   return words.toLowerCase()
 }

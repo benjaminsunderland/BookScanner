@@ -4,7 +4,8 @@
   "description": "- Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover --include-all-sources jasmine-node test",
+    "coverage": "istanbul cover ./wordCount.js"
   },
   "repository": {
     "type": "git",
