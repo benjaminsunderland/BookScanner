@@ -1,8 +1,11 @@
 var fs = require('fs')
+var PrimeNumber = require("../app/primeNumber.js");
+var FormatText = require("../app/formatText.js");
 
-function WordCount(filepath){
+function WordCount(filepath, primenumber = new PrimeNumber, formattext = new FormatText){
   this._filepath = filepath || null
-  this._data;
+  this._primenumber = primenumber
+  this._formattext = formattext;
 }
 
 WordCount.prototype.readfile = function() {
@@ -38,8 +41,20 @@ WordCount.prototype.countTerms = function(words) {
   return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
 }
 
+PrimeNumber.prototype.primeNumber = function(words) {
+  self = this;
+  return Object.keys(words).map(function(key) {
+  return { [key]: words[key], prime: self.this_primenumber(words[key]) };
+  });
+}
+
 WordCount.prototype.printOutput = function() {
-  return this.countTerms((this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfile()))))))
+  x = this.countTerms((this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfile()))))))
+  return primeNumber(x)
 }
 
 module.exports = WordCount;
+
+word = new WordCount('../CTM_Test/spec/TextFiles/fortestingwithtdd.txt')
+word.readfile()
+console.log(word.printOutput())

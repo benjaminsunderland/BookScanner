@@ -51,5 +51,8 @@ describe("When changing the format of the text file", function() {
   it('will have the correct output', function() {
     expect(wordCount.printOutput()).toEqualFileContents(fileoutput)
     });
+  it('will be possible to print the output out with prime numbers', function() {
+    expect(wordCount.primeNumber()).toEqualFileContents(fileoutput)
+  });
   });
  });
