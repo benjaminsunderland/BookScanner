@@ -2,9 +2,6 @@ THE RAILWAY CHILDREN
 
 By E. Nesbit
 
-How to strip a textfile of whitespace, punctuation and capital letters
-
-
                To my dear son Paul Bland,
                behind whose knowledge of railways
                my ignorance confidently shelters.

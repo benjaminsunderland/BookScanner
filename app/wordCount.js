@@ -1,45 +1,32 @@
-var fs = require('fs')
+var fs = require("fs");
+var PrimeNumber = require("../app/primeNumber.js");
+var FormatText = require("../app/formatText.js");
 
-function WordCount(filepath){
-  this._filepath = filepath || null
-  this._data;
+function WordCount(filepath, primenumber = new PrimeNumber(), formattext = new FormatText()) {
+  this._filepath = filepath || null;
+  this._primenumber = primenumber;
+  this._formattext = formattext;
 }
 
 WordCount.prototype.readfile = function() {
-var self = this;
-if (!self._filepath) {
-   throw new Error("File not found")
- }
- self._data = fs.readFileSync(self._filepath, 'utf8')
- return self._data
-}
+  var self = this;
+  if (!self._filepath) {
+    throw new Error("File not found");
+  }
+  this._formattext._data = fs.readFileSync(self._filepath, "utf8");
+  return this._formattext._data
+};
 
-WordCount.prototype.testFunction = function() {
-  return true
-}
-
-WordCount.prototype.toDowncase = function(words) {
-  return words.toLowerCase()
-}
-
-WordCount.prototype.removeWords = function(words) {
-  return words.replace(/\W/g, " ")
-}
-
-WordCount.prototype.wordSplit = function(words) {
-  return words.split(/\s+/);
-}
-
-WordCount.prototype.removeEmptyEntries = function(words) {
-  return words.filter(v => !!v)
-}
-
-WordCount.prototype.countTerms = function(words) {
-  return words.reduce((dict, v) => {dict[v] = v in dict ? dict[v] + 1 : 1; return dict}, {});
-}
+WordCount.prototype.turnToPrime = function(words) {
+  return this._primenumber.wordPrime(words)
+};
 
 WordCount.prototype.printOutput = function() {
-  return this.countTerms((this.removeEmptyEntries(this.wordSplit(this.removeWords(this.toDowncase(this.readfile()))))))
-}
+  this._formattext.toDowncase()
+  this._formattext.deleteWords()
+  this._formattext.splitWords()
+  this._formattext.filterEntries()
+  return this.turnToPrime(this._formattext.countWords())
+};
 
 module.exports = WordCount;

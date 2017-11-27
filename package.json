@@ -4,8 +4,7 @@
   "description": "- Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover --include-all-sources jasmine-node test",
-    "coverage": "istanbul cover ./wordCount.js"
+    "test": "npm wordCountSpec.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,18 @@
   },
   "homepage": "https://github.com/benjaminsunderland/CTM_Test#readme",
   "devDependencies": {
-    "jasmine": "^2.8.0"
+    "grunt-template-jasmine-istanbul": "^0.5.0",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.8.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2"
   },
   "dependencies": {
+    "jscoverage": "^0.6.0",
     "node-jasmine-file-contents-matcher": "^0.1.5"
   }
 }
