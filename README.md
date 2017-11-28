@@ -77,4 +77,8 @@ I started to realise it was important to start extracting out each of these form
 
 ## What you will see
 
-<img align="center" width="400" height="600" src="./CTM/public/assets/programoutput.png">
+<img align="center" width="400" height="600" src="./Tamagotchi/Assets/egg.png">
+<img align="center" width="400" height="600" src="./Tamagotchi/Assets/cat.png">
+
+Collaborators
+<img align="center" width="400" height="600" src="./CTM_Test/public/assets/programoutput.png">
