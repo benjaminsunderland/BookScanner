@@ -30,3 +30,7 @@ WordCount.prototype.printOutput = function() {
 };
 
 module.exports = WordCount;
+
+word = new WordCount('../CTM_Test/spec/TextFiles/therailwaychildren.txt')
+word.readfile()
+console.log(word.printOutput())

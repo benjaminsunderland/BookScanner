@@ -30,6 +30,9 @@ describe("primeNumber", function() {
     it("when given 40 as prime number", function() {
       expect(primeNumber.isPrime(40)).toEqual(false);
     });
+    it("will add 2 + 2", function() {
+      expect(primeNumber.add(2,2)).toEqual(4)
+    });
   });
   describe("Words return a result of true or false as prime", function() {
     it("When given a hash of words", function() {

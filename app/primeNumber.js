@@ -12,4 +12,8 @@ PrimeNumber.prototype.wordPrime = function(words) {
   });
 }
 
+PrimeNumber.prototype.add = function(a,b) {
+  return a + b
+}
+
 module.exports = PrimeNumber;

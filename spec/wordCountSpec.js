@@ -18,7 +18,7 @@ describe('wordCount',function(){
 
 describe("When trying to read a file", function() {
   it('will not throw an error when reading the file', function() {
-    expect(wordCount.readfile()).toEqual(filetext)
+    expect(wordCount.readfile()).toEqualFileContents(file)
   });
 });
   it('will throw an error if a file is missing', function() {
@@ -32,7 +32,7 @@ describe("When running the file", function() {
     expect(wordCount.printOutput()).toEqualFileContents(fileoutput)
     });
   it('will be possible to print the output out with prime numbers', function() {
-    expect(wordCount.primeNumber()).toEqualFileContents(fileoutput)
+    expect(wordCount.turnToPrime(file)).toEqualFileContents(fileoutput)
   });
   });
  });
