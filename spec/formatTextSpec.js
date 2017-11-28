@@ -1,4 +1,4 @@
-var FormatText = require("../app/formatText.js");
+var FormatText = require("../lib/formatText.js");
 var filetext = "Hello this is a te$st\nOnce aga_in, th/is is m.y writing for the purpose\nOf tes ting in TDD\n";
 var fileoutput = '../CTM_Test/spec/TextFiles/fileoutput.txt';
 

@@ -1,4 +1,4 @@
-var PrimeNumber = require("../app/primeNumber.js");
+var PrimeNumber = require("../lib/primeNumber.js");
 
 "use strict";
 
@@ -29,9 +29,6 @@ describe("primeNumber", function() {
     });
     it("when given 40 as prime number", function() {
       expect(primeNumber.isPrime(40)).toEqual(false);
-    });
-    it("will add 2 + 2", function() {
-      expect(primeNumber.add(2,2)).toEqual(4)
     });
   });
   describe("Words return a result of true or false as prime", function() {

@@ -1,6 +1,6 @@
 'use strict';
 
-var WordCount = require("../app/wordCount.js");
+var WordCount = require("../lib/wordCount.js");
 var fs = require('fs');
 require('node-jasmine-file-contents-matcher');
 var file = '../CTM_Test/spec/TextFiles/fortestingwithtdd.txt';

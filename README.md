@@ -8,7 +8,7 @@ The Aim:
  
 ## Installation
 
-* Make sure you've got node.js installed.
+* Make sure you have node.js installed.
 * Clone the repository below to your local computer
 
 ```sh
@@ -34,13 +34,9 @@ jasmine
 Run the program by:
 
 ```sh
-Adding these three lines at the *bottom of wordCount.js*:
+In the project directory, run:
 
-word = new WordCount('../CTM_Test/spec/TextFiles/therailwaychildren.txt')
-word.readfile()
-console.log(word.printOutput())
-
-Finally running node app/wordCount.js in  terminal
+node execute.js
 ```
 
 ## Technologies
@@ -56,8 +52,6 @@ Finally running node app/wordCount.js in  terminal
 - Which module would hold my dependency injections?
 - It was important to me to first program an application that could work and then start extracting modules out of it.
 
-
-
 As someone who has mostly used Ruby throughout their time being a developer, adjusting to the syntactic way of javascript was proving to be difficult at the beginning of the challenge. It was really important that I spent the first day understanding Javascript syntax, it's **modular patterns** and  the **file System Module**.
 
 Upon understanding these, I started to write out my first module. The first function read the contents of the file and stored them in a variable in the *WordCount* constructor. I then needed to format the text. An example of what I did was by converting all non word characters to spaces. Another being by splitting the text with continuous spaces as the delimiter. I then finally passed this array into a Count function which would convert this datatype into a hash with 'key, value' pairs ('word: number')  I subsequently created the second module which contained a function that could be passed a number and would return 'true or false' depending on it's value.
@@ -70,15 +64,11 @@ I started to realise it was important to start extracting out each of these form
 - Very pleased that I managed to program a finished application .
 - I'm also pleased with the test driven approach I took.
 
-## What would I like to include in the future
+## What would I like to include in the future or change
 
 - I would have loved to include **Istanbul** in this project for code coverage. I was finding it difficult to configure and install. This was one of the first times using NodeJS and we had limited time for this project.
 - The output could be formatted in a much more aesthetically pleasing way.
 
 ## What you will see
 
-<img align="center" width="400" height="600" src="./Tamagotchi/Assets/egg.png">
-<img align="center" width="400" height="600" src="./Tamagotchi/Assets/cat.png">
-
-Collaborators
-<img align="center" width="400" height="600" src="./CTM_Test/public/assets/programoutput.png">
+![Alt text](https://user-images.githubusercontent.com/30705722/33332371-059ca2d8-d45c-11e7-9cb1-3c9d79de2219.png)
